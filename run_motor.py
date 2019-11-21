@@ -37,7 +37,8 @@ try:
     print("Dispensing...")
     dispense(dispense_time)
     print("Enjoy your candy")
+    GPIO.cleanup()
 
 except KeyboardInterrupt:
-
+    print("Error")
     GPIO.cleanup()
