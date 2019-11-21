@@ -33,9 +33,10 @@ def dispense(run_time):
     time.sleep(run_time)
     GPIO.output(STBY, GPIO.LOW) #stop
 
-print("Dispensing...")
-dispense(dispense_time)
-print("Enjoy your candy")
+try:
+    print("Dispensing...")
+    dispense(dispense_time)
+    print("Enjoy your candy")
 
 except KeyboardInterrupt:
 
