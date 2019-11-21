@@ -5,10 +5,10 @@ import time
 dispense_time = 5
 
 #Pin Layout
-STBY = 22
-AIN1 = 27
-AIN2 = 4
-PWMA = 17
+STBY = 15 #STBY BCM22
+AIN1 = 13 #AIN1 BCM27
+AIN2 = 7  #AIN2 BCM4
+PWMA = 11 #PWMA BCM17
 
 GPIO.setmode(GPIO.BOARD) #use board pin numbers
 
