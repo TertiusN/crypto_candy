@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 #a couple of delay constants
-dispense_time = 5
+dispense_time = 2
 
 #Pin Layout
 STBY = 15 #STBY BCM22
