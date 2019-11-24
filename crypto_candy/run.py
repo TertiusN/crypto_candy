@@ -27,5 +27,5 @@ def initialise(node, wallet=None):
 
             last_balance, active_address = candy_iota.update_balance(wallet, len(inputs))
 
-        print(balance)
+        print("Device Ready...")
         time.sleep(3)
