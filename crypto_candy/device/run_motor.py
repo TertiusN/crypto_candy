@@ -21,16 +21,12 @@ GPIO.output(AIN1, GPIO.HIGH)
 GPIO.output(AIN2, GPIO.LOW)
 GPIO.output(PWMA, GPIO.HIGH)
 
+
 #Dispense Candy
 def dispense(run_time):
     GPIO.output(AIN1, GPIO.LOW)
     GPIO.output(AIN2, GPIO.HIGH)
 
-    try:
-        GPIO.output(STBY, GPIO.HIGH) #start
-        time.sleep(run_time)
-        GPIO.output(STBY, GPIO.LOW) #stop
-        GPIO.cleanup()
-    except:
-        print("Error")
-        GPIO.cleanup()
+    GPIO.output(STBY, GPIO.HIGH) #start
+    time.sleep(run_time)
+    GPIO.output(STBY, GPIO.LOW) #stop
