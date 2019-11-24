@@ -8,7 +8,6 @@ AIN2 = 7  #AIN2 BCM4
 PWMA = 11 #PWMA BCM17
 
 GPIO.setmode(GPIO.BOARD) #use board pin numbers
-GPIO.setwarnings(False) #mute warnings
 
 #Set GPIO outputs
 GPIO.setup(STBY, GPIO.OUT)
@@ -27,7 +26,11 @@ def dispense(run_time):
     GPIO.output(AIN1, GPIO.LOW)
     GPIO.output(AIN2, GPIO.HIGH)
 
-    GPIO.output(STBY, GPIO.HIGH) #start
-    time.sleep(run_time)
-    GPIO.output(STBY, GPIO.LOW) #stop
-    GPIO.cleanup()
+    try:
+        GPIO.output(STBY, GPIO.HIGH) #start
+        time.sleep(run_time)
+        GPIO.output(STBY, GPIO.LOW) #stop
+        GPIO.cleanup()
+    except:
+        print("Error")
+        GPIO.cleanup()
