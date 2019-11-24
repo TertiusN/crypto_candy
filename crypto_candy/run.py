@@ -21,12 +21,10 @@ def initialise(node, wallet=None):
         if balance > last_balance:
             print("Payment Received!")
             last_balance, active_address = candy_iota.update_balance(wallet, len(inputs))
-        try:
-            print("Dispensing...")
-            run_motor.dispense(3)
-            print("Enjoy your candy")
-        except:
-            print("Device Error")
+
+        print("Dispensing...")
+        run_motor.dispense(3)
+        print("Enjoy your candy")
 
         print(balance)
         time.sleep(3)
