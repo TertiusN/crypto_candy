@@ -2,12 +2,9 @@ from crypto_candy.crypto_payments import iota_payment
 from crypto_candy.device import run_motor
 import time, os
 
-node = 'https://nodes.thetangle.org:443'  # Select your preferred node
-key = os.environ['FERNET_KEY']
-
 
 def initialise(node, wallet=None):
-    candy_iota = iota_payment.cryptoWallet(key, node)
+    candy_iota = iota_payment.cryptoWallet(os.environ['FERNET_KEY'], node)
     if wallet is None:
         print("No wallet Found")
         wallet = candy_iota.initialise_wallet()
@@ -33,6 +30,3 @@ def initialise(node, wallet=None):
 
         print(balance)
         time.sleep(3)
-
-
-initialise(node, "test_wallet.ini")
