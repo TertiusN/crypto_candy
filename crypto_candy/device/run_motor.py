@@ -1,9 +1,6 @@
 import RPi.GPIO as GPIO
 import time
 
-#a couple of delay constants
-dispense_time = 2
-
 #Pin Layout
 STBY = 15 #STBY BCM22
 AIN1 = 13 #AIN1 BCM27
@@ -32,13 +29,4 @@ def dispense(run_time):
     GPIO.output(STBY, GPIO.HIGH) #start
     time.sleep(run_time)
     GPIO.output(STBY, GPIO.LOW) #stop
-
-try:
-    print("Dispensing...")
-    dispense(dispense_time)
-    print("Enjoy your candy")
-    GPIO.cleanup()
-
-except KeyboardInterrupt:
-    print("Error")
     GPIO.cleanup()
