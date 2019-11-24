@@ -8,6 +8,7 @@ AIN2 = 7  #AIN2 BCM4
 PWMA = 11 #PWMA BCM17
 
 GPIO.setmode(GPIO.BOARD) #use board pin numbers
+GPIO.setwarnings(False) #mute warnings
 
 #Set GPIO outputs
 GPIO.setup(STBY, GPIO.OUT)
