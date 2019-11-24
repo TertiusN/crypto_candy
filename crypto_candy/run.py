@@ -19,11 +19,13 @@ def initialise(node, wallet=None):
     while True:
         balance, active_address = candy_iota.active_address_balance(api, len(inputs))
         if balance > last_balance:
-            print("Payment Received!")
-            last_balance, active_address = candy_iota.update_balance(wallet, len(inputs))
+            payment = balance - last_balance
+            print("Payment Received! {} iota".format(payment))
             print("Dispensing...")
             run_motor.dispense(3)
             print("Enjoy your candy")
+
+            last_balance, active_address = candy_iota.update_balance(wallet, len(inputs))
 
         print(balance)
         time.sleep(3)
